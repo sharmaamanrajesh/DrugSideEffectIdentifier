@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>WSPSE</title>
+</head>
+<body>
+    <!-- <center>
+        <h1 class="heading">Sorting Portal </h1>
+        <form enctype="multipart/form-data" method="post" action="mergeSort.py">
+            <textarea cols="100" rows="20" name="Arr" placeholder="Enter the array elements seperated by commas" class="context "></textarea><br><br>
+            <input class="btn" type="submit" name="sort" value="Sort the elements">
+         </form>
+    </center> -->
+        <center>
+            <h1 class="heading">WSPSE Portal </h1>
+        </center>
+        <form method="post" action="predictIt">
+            {% csrf_token %}
+            <div class="IO_Box">
+                <div>
+                    <h3 class="sub-heading">INPUT:</h3>
+                    <textarea cols="100" rows="20" name="InputBar" placeholder="Enter the 167 bit code of the drug seperated by Commas" class="context ">{{Initial_167_Code}}</textarea>
+                </div>
+
+                <div>
+                    <h3 class="sub-heading">OUTPUT:</h3>
+                    <textarea cols="100" rows="20" name="OutputBar" placeholder="Predicted Side Effects" class="context ">{{PredictedOutcome}}</textarea>
+                </div>
+
+            </div>
+
+            <center>
+                <a href="/predictIt">
+                <input class="btn" type="submit" name="predictBtn" value="Predict Side Effects">
+                </a>
+            </center>
+         </form>
+
+
+</body>
+</html>
